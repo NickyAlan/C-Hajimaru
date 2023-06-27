@@ -1,48 +1,110 @@
-// https://youtu.be/87SH2Cn0s9A?t=3649
+// https://youtu.be/87SH2Cn0s9A?t=4637
 #include <stdio.h>
 #include <stdbool.h> // bool
 #include <string.h> // strlen
 #include <math.h> 
+#include <ctype.h> // string fn
 
 int main() {
-    int number = 10;
-    float fps = 24.5;
-    double morePrecise = 32.113013;
-    char charecter = 'C';
-    char string[] = "Python";
-    bool isNormal = true;
+    // int number = 10;
+    // float fps = 24.5;
+    // double morePrecise = 32.113013;
+    // char charecter = 'C';
+    // char string[] = "Python";
+    // bool isNormal = true;
 
-    printf("number: %d", number);
-    printf("\nfps: %.2f", fps);
-    printf("\nmore precise: %.5lf", morePrecise);
-    printf("\ncharecter: %c", charecter);
-    printf("\nstring: %s", string);
-    printf("\nis normal: %d", isNormal);
+    // printf("number: %d", number);
+    // printf("\nfps: %.2f", fps);
+    // printf("\nmore precise: %.5lf", morePrecise);
+    // printf("\ncharecter: %c", charecter);
+    // printf("\nstring: %s", string);
+    // printf("\nis normal: %d", isNormal);
     
-    float item1 = 5.15;
-    float item2 = 10.42;
+    // float item1 = 5.15;
+    // float item2 = 10.42;
     
-    printf("\nitem 1: %6.2f", item1);
-    printf("\nitem 2: %6.2f", item2);
+    // printf("\nitem 1: %6.2f", item1);
+    // printf("\nitem 2: %6.2f", item2);
 
-    const float PI = 3.14159;
-    printf("\nPI: %.4f", PI);
+    // const float PI = 3.14159;
+    // printf("\nPI: %.4f", PI);
 
-    char name[25]; // max size 25 bytes
-    int age;
-    printf("\nWhat's your name? \n: ");
-    // scanf("%s", &name); input not include white space
-    fgets(name, 25, stdin); // alway add \n at the end
-    name[strlen(name) - 1] = '\0'; // remove \n
+    // char name[25]; // max size 25 bytes
+    // int age;
+    // printf("\nWhat's your name? \n: ");
+    // // scanf("%s", &name); input not include white space
+    // fgets(name, 25, stdin); // alway add \n at the end
+    // name[strlen(name) - 1] = '\0'; // remove \n
 
-    printf("How old are you? \n: ");
-    scanf("%d", &age);
-    printf("Hello, How are you? %s. You're %d years old.", name, age);
+    // printf("How old are you? \n: ");
+    // scanf("%d", &age);
+    // printf("Hello, How are you? %s. You're %d years old.", name, age);
     
-    double a = sqrt(10);
-    double b = pow(5, 2);
-    int c = round(3.14);
-    printf("\n%d", c);
+    // double a = sqrt(10);
+    // double b = pow(5, 2);
+    // int c = round(3.14);
+    // printf("\n%d", c);
+
+
+    //pythagoras
+    // double A;
+    // double B;
+    // double C;
+    
+    // printf("Enter side A : ");
+    // scanf("%lf", &A);
+    
+    // printf("Enter side B : ");
+    // scanf("%lf", &B);
+    
+    // C = sqrt(A*A + B*B);
+    // printf("Side C = %.3lf", C);
+
+    // int age = -1;
+    // bool is_adult = false;
+    // if (age >= 18) {
+    //     is_adult = true;
+    // }
+    // else if (age < 0) {
+    //     printf("what wrong with your age ?\n");
+    // }
+    // else {
+    //     is_adult = false;
+    // }
+
+    // printf("age: %d, is_adult: %d", age, is_adult);
+
+    // char grade = 'A';
+    // switch(grade) {
+    //     case 'A' :
+    //         printf("perfect!");
+    //         break;
+    //     case 'B' :
+    //         printf("nice!");
+    //         break;
+    //     case 'F' :
+    //         printf("why!");
+    //         break;
+    //     default :
+    //         printf("%c is not valid", grade);
+    // }
+
+    char unit;
+    float temp;
+
+    printf("\nIs the temperature in (F) or (C) ? : ");
+    scanf("%c", &unit);
+    unit = toupper(unit);
+
+    if (unit == 'C') {
+        printf("celcius");
+    }
+    else if (unit == 'F') {
+        printf("fahrenheit");
+    }
+    else {
+        printf("%c not valid for unit", unit); 
+    }
 
     return 0;
 }
