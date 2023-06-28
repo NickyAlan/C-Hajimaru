@@ -1,9 +1,22 @@
-// https://youtu.be/87SH2Cn0s9A?t=4637
+// https://youtu.be/87SH2Cn0s9A?t=6399
 #include <stdio.h>
 #include <stdbool.h> // bool
 #include <string.h> // strlen
 #include <math.h> 
 #include <ctype.h> // string fn
+
+void foo(char name[], int age) {
+    printf("nothing special");
+    printf("\nfor real? %s: %d", name, age);
+}
+
+double square(double x) {
+    return x*x;
+}
+
+int find_max(int x, int y) {
+    return (x > y) ? x: y; // (condition) ? true: false
+}
 
 int main() {
     // int number = 10;
@@ -89,22 +102,33 @@ int main() {
     //         printf("%c is not valid", grade);
     // }
 
-    char unit;
-    float temp;
+    // char unit;
+    // float temp;
 
-    printf("\nIs the temperature in (F) or (C) ? : ");
-    scanf("%c", &unit);
-    unit = toupper(unit);
+    // printf("\nIs the temperature in (F) or (C) ? : ");
+    // scanf("%c", &unit);
+    // unit = toupper(unit);
 
-    if (unit == 'C') {
-        printf("celcius");
-    }
-    else if (unit == 'F') {
-        printf("fahrenheit");
-    }
-    else {
-        printf("%c not valid for unit", unit); 
-    }
+    // if (unit == 'C') {
+    //     printf("celcius");
+    // }
+    // else if (unit == 'F') {
+    //     printf("fahrenheit");
+    // }
+    // else {
+    //     printf("%c not valid for unit", unit); 
+    // }
+
+    char name[] = "bob";
+    int age = 20;
+    foo(name, age);
+
+    double number = square(31);
+    printf("\n%.3lf", number);
+
+    int max_number = find_max(10, 12);
+    printf("\n%d", max_number);
+
 
     return 0;
 }
