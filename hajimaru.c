@@ -1,4 +1,4 @@
-// https://youtu.be/87SH2Cn0s9A?t=6399
+// https://youtu.be/87SH2Cn0s9A?t=8308
 #include <stdio.h>
 #include <stdbool.h> // bool
 #include <string.h> // strlen
@@ -119,16 +119,51 @@ int main() {
     //     printf("%c not valid for unit", unit); 
     // }
 
-    char name[] = "bob";
-    int age = 20;
-    foo(name, age);
+    // char name[] = "bob";
+    // int age = 20;
+    // foo(name, age);
 
-    double number = square(31);
-    printf("\n%.3lf", number);
+    // double number = square(31);
+    // printf("\n%.3lf", number);
 
-    int max_number = find_max(10, 12);
-    printf("\n%d", max_number);
+    // int max_number = find_max(10, 12);
+    // printf("\n%d", max_number);
 
+    // char string1[] = "bob";
+    // char string2[] = "code";
+
+    // strupr(string1); // strlwr
+    // int string_len = strlen(string1);
+    // printf("%s %d", string1, string_len);
+
+    // bool is_equal = string1 == string2;
+    // printf_s("\n%d", is_equal);
+
+    // for(int i=0; i<5; i++) {
+    //     if (i%2 == 0) {
+    //         printf("event - ");
+    //     }
+    //     else {
+    //         printf("odd - ");
+    //     }
+    //     printf("%d\n", i);
+    // }
+
+    // int count = 0;
+    // while (true) {
+    //     printf("always\n");
+    //     count += 1;
+    //     if (count >= 5) {
+    //         break;
+    //     }
+    // }
+
+    int matrix[] = {5, 10, 15, 20, 23, 41, 14};
+    printf("%d", matrix[2]);
+
+    for (int idx = 0; idx < sizeof(matrix) / sizeof(matrix[0]); idx++) {
+        printf_s("%d\n", matrix[idx]);
+    }
 
     return 0;
 }
