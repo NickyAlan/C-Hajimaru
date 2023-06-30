@@ -1,4 +1,4 @@
-// https://youtu.be/87SH2Cn0s9A?t=8308
+// https://youtu.be/87SH2Cn0s9A?t=9530
 #include <stdio.h>
 #include <stdbool.h> // bool
 #include <string.h> // strlen
@@ -16,6 +16,18 @@ double square(double x) {
 
 int find_max(int x, int y) {
     return (x > y) ? x: y; // (condition) ? true: false
+}
+
+void sort(int array[], int size) {
+    for (int i=0; i<size-1; i++){
+        for (int j=0; j<size-1; j++) {
+            if (array[j] > array[j+1]) {
+                int temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+            }
+        }
+    }
 }
 
 int main() {
@@ -158,11 +170,48 @@ int main() {
     //     }
     // }
 
-    int matrix[] = {5, 10, 15, 20, 23, 41, 14};
-    printf("%d", matrix[2]);
+    // int matrix[] = {5, 10, 15, 20, 23, 41, 14};
+    // printf("%d", matrix[2]);
 
-    for (int idx = 0; idx < sizeof(matrix) / sizeof(matrix[0]); idx++) {
-        printf_s("%d\n", matrix[idx]);
+    // for (int idx = 0; idx < sizeof(matrix) / sizeof(matrix[0]); idx++) {
+    //     printf_s("%d\n", matrix[idx]);
+    // }
+
+    // int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    // int n_rows = sizeof(matrix) / sizeof(matrix[0]);
+    // int n_cols = sizeof(matrix[0]) / sizeof(matrix[0][0]);
+    
+    // for (int row_idx = 0; row_idx < n_rows; row_idx++) {
+    //     for (int col_idx = 0; col_idx < n_cols; col_idx++) {
+    //         printf("%d ", matrix[row_idx][col_idx]);
+    //     }
+    //     printf("\n");
+    // }
+
+    // char cars[][10] = {"Tesla", "Nissan", "Bent"};
+    // strcpy(cars[0], "Mustang"); // cars[0] = "Mustang"
+    // for (int idx=0; idx<sizeof(cars)/sizeof(cars[0]); idx++) {
+    //     printf("%s ", cars[idx]);
+    // } 
+
+    // swap values
+    // char x[10] = "water";
+    // char y[10] = "soda";
+    // char temp[10];
+
+    // strcpy(temp, x); // temp = x
+    // strcpy(x, y);
+    // strcpy(y, temp);
+
+    // printf("x: %s\n", x);
+    // printf("y: %s", y);
+
+    int array[] = {9, 1, 8, 2, 7, 5};
+    int size = sizeof(array) / sizeof(array[0]);
+
+    sort(array, size);
+    for (int idx=0; idx<size; idx++) {
+        printf("%d ", array[idx]);
     }
 
     return 0;
