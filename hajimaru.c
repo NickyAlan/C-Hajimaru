@@ -1,9 +1,25 @@
-// https://youtu.be/87SH2Cn0s9A?t=9530
+// https://youtu.be/87SH2Cn0s9A?t=11652
 #include <stdio.h>
 #include <stdbool.h> // bool
 #include <string.h> // strlen
 #include <math.h> 
 #include <ctype.h> // string fn
+#include <stdlib.h> // random number
+#include <time.h> 
+
+// class: but no medthod
+struct Player {
+    char name[12];
+    int score;
+};
+
+typedef struct {
+    char name[25];
+    char password[12];
+    int id;
+} User;
+
+enum Day{Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7};
 
 void foo(char name[], int age) {
     printf("nothing special");
@@ -206,12 +222,52 @@ int main() {
     // printf("x: %s\n", x);
     // printf("y: %s", y);
 
-    int array[] = {9, 1, 8, 2, 7, 5};
-    int size = sizeof(array) / sizeof(array[0]);
+    // int array[] = {9, 1, 8, 2, 7, 5};
+    // int size = sizeof(array) / sizeof(array[0]);
 
-    sort(array, size);
-    for (int idx=0; idx<size; idx++) {
-        printf("%d ", array[idx]);
+    // sort(array, size);
+    // for (int idx=0; idx<size; idx++) {
+    //     printf("%d ", array[idx]);
+    // }
+
+    // struct Player player1;
+    // struct Player player2;
+    // strcpy(player1.name, "Python");
+    // player1.score = 10;
+    // strcpy(player2.name, "Rust");
+    // player2.score = 8;
+
+    // printf("%s\n", player1.name);
+    // printf("%s\n", player2.name);
+
+    // User user1 = {"Python", "1234", 2002};
+    // printf("%s\n", user1.name);
+    // printf("%d\n", user1.id);
+
+    // enum Day today = Sun;
+    // printf("%d", today);
+
+    // srand(time(0)); // reset seed
+    // for (int i=0; i<5; i++) {
+        // int number1 = (rand() % 6) + 1;
+        // printf("%d ", number1);
+    // }
+
+    // //write and read file
+    // FILE *pF = fopen("test.txt", "w");
+    // fprintf(pF, "peter pan");
+    // fclose(pF);
+
+    FILE *pF = fopen("test.txt", "r");
+    if (pF == NULL) {
+        printf("can't open file!");
+    }
+    else {
+        char buffer[255];
+        while (fgets(buffer, 255, pF) != NULL) {
+            printf("%s", buffer);
+        }
+        fclose(pF);
     }
 
     return 0;
